@@ -11,25 +11,24 @@ const AppWithRouterAccess = () => {
   const history = useHistory();
   const onAuthRequired = () => {
       history.push('/login');
-  };  
+  };
   const restoreOriginalUri = async (_oktaAuth, originalUri) => {
     history.replace(toRelativeUrl(originalUri, window.location.origin));
   };
 
-  
   const baseDomain = process.env.REACT_APP_OKTA_URL_BASE;
   const issuer = baseDomain + '/oauth2/default'
   const clientId = process.env.REACT_APP_OKTA_CLIENTID;
   const redirect = process.env.REACT_APP_OKTA_APP_BASE_URL + '/callback';
 
   const loggedIn = true;
-  
+
   const config = {
     issuer: issuer,
     clientId: clientId,
     redirectUri: redirect
   };
-  
+
   const oktaAuth = new OktaAuth(config);
 
   return (
