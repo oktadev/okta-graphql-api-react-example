@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# GraphQL API + React Example
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository is an example application that shows how to create a GraphQL API and consume it from React.
 
-## Available Scripts
+Please read [Quickly Consume a GraphQL API from React](https://developer.okta.com/blog/2020/11/23/quick-graphql-react-app) for a tutorial that explains how to build this example.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+**Prerequisites:** [Node 14](https://nodejs.org).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To install this example, run the following commands:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+git clone https://github.com/oktadeveloper/okta-graphql-api-react-example.git graphql-api
+cd graphql-api
+```
 
-### `npm test`
+Run `npm install` to install all this project's dependencies.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Create an OIDC App on Okta
 
-### `npm run build`
+To Begin, install the [Okta CLI](https://cli.okta.com/), open a new terminal window, and run `okta register` to sign up for a new account. If you already have an account, run `okta login`. Then, run `okta apps create`. Select the default app name, or change it as you see fit. Choose **Single-Page App** and press **Enter**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use `http://localhost:3000/callback` for the Redirect URI and accept the default Logout Redirect URI of `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Copy your Okta settings to a `.env` file in the root directory of your cloned app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```env
+REACT_APP_OKTA_CLIENTID={yourOktaClientId}
+REACT_APP_OKTA_URL_BASE=https://{yourOktaDomain}
+REACT_APP_OKTA_APP_BASE_URL=http://localhost:3000
+REACT_APP_EVERBASE_API_KEY={yourEverbaseApiKey}
+```
 
-### `npm run eject`
+When the installation completes, run `npm start` and marvel at your React app with OIDC authentication!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For the Everbase API key, please read [the blog post](http://localhost:4000/blog/2020/11/23/quick-graphql-react-app). 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Help
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Please post any questions as comments on this repo's [blog post](http://localhost:4000/blog/2020/11/23/quick-graphql-react-app), or visit our [Okta Developer Forums](https://devforum.okta.com/). 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Apache 2.0, see [LICENSE](LICENSE).
+ 
